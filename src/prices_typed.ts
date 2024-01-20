@@ -79,6 +79,7 @@ function createApp(database: Database) {
 
   function isMonday(date: Date | Temporal.PlainDate) {
     if (date instanceof Date) return date.getDay() === 1;
+    console.log(date)
     if (date instanceof Temporal.PlainDate) return date.dayOfWeek === 1
   }
 
