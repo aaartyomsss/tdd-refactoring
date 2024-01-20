@@ -87,6 +87,7 @@ function createApp(database: Database) {
     for (let row of holidays) {
       const defined = date && date instanceof Date
       const holiday2 = Temporal.PlainDate.from(row.holiday)
+      const temporalDate = defined && Temporal.PlainDate.from(date.toISOString().replace('Z', ''))
       if (
         defined &&
         date.getFullYear() === holiday2.year &&
