@@ -95,7 +95,7 @@ function createApp(database: Database) {
         defined &&
         cond1 &&
         cond2 &&
-        date.getDate() === holiday2.day
+        cond3
       ) {
         return true;
       }
