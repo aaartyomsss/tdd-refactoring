@@ -93,7 +93,7 @@ function createApp(database: Database) {
       const cond2 = !!temporalDate && temporalDate.month === holiday2.month
       const cond3 = !!temporalDate && temporalDate.day === holiday2.day
       if (
-        defined &&
+        date &&
         cond1 &&
         cond2 &&
         cond3
