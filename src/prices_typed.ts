@@ -87,7 +87,6 @@ function createApp(database: Database) {
       const defined = date && date instanceof Date
       const isTemporalDate = date && date instanceof Temporal.PlainDate
       const holiday2 = Temporal.PlainDate.from(row.holiday)
-      const temporalDate = isTemporalDate ? date : (defined && Temporal.PlainDate.from(date.toISOString().replace('Z', '')))
       const cond1 = date instanceof Temporal.PlainDate && date.year === holiday2.year
       const cond2 = date instanceof Temporal.PlainDate && date.month === holiday2.month
       const cond3 = date instanceof Temporal.PlainDate && date.day === holiday2.day
