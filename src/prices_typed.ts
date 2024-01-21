@@ -84,8 +84,6 @@ function createApp(database: Database) {
   function isHoliday(date: Date | undefined | Temporal.PlainDate) {
     const holidays = database.getHolidays();
     for (let row of holidays) {
-      const defined = date && date instanceof Date
-      const isTemporalDate = date && date instanceof Temporal.PlainDate
       const holiday2 = Temporal.PlainDate.from(row.holiday)
       const cond1 = date instanceof Temporal.PlainDate && date.year === holiday2.year
       const cond2 = date instanceof Temporal.PlainDate && date.month === holiday2.month
